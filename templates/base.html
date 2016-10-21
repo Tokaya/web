@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+        {% block title %}{% endblock %} - Tokayaの駅
+    </title>
+    {% block head %}
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script>
+            console.log('父模板的 log')
+        </script>
+        <link rel="shortcut icon" href="/static/img/favicon.ico"/>
+        <link rel="bookmark" href="/static/img/favicon.ico"/>
+    {% endblock %}
+    <link rel="stylesheet" href="/static/css/base.css">
+  </head>
+<body>
+  <div class="container">
+      <div class="tokaya-header">
+          <div class="tokaya-top-inner">
+              <a href="/index" class="tokaya-title">Tokaya の </a>
+              <a href="/index" class="tokaya-title tokaya-eki">駅</a>
+              <span class="link">
+                  <a class="tokaya-nav-item" href="/weibo">微博</a>
+                  <a class="tokaya-nav-item" href="/blog">博客</a>
+                  <a class="tokaya-nav-item" href="/node/show">论坛</a>
+                  <span class="tokaya-dropdown">
+                      <a class="tokaya-dropdown-title tokaya-nav-item" href="#">练习</a>
+                      <span class="tokaya-dropdown-content">
+                          <a class="tokaya-nav-item" href="/todo">todo</a>
+                          <a class="tokaya-nav-item" href="/css_practice">css练习</a>
+                          <a class="tokaya-nav-item" href="#">关于</a>
+                      </span>
+                  </span>
+                  <a class="tokaya-nav-item" href="/profile">个人资料</a>
+                  <a class="tokaya-nav-item" href="/logout">退出</a>
+                  <!-- <a class="tokaya-nav-item" href="/profile"> -->
+                      <!-- <img src="" alt="" /> -->
+                  <!-- </a> -->
+              </span>
+          </div>
+      </div>
+      <div class="body">
+      {% block content %}
+
+      {% endblock %}
+      </div>
+      <!-- <div class="tokaya-header footer">
+        {% block footer %}
+            <span class=""></span>Copyright 2016 by <a href="/">@Tokaya</a>.
+        {% endblock %}
+      </div> -->
+  </div>
+</body>
+</html>

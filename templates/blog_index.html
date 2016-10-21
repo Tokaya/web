@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/blog_index.css">
+{% endblock %}
+{% block title %}博客{% endblock %}
+{% block content %}
+    <div class="tokaya-blog">
+        <div class="tokaya-blog-content">
+            {% for b in blogs  %}
+                <div class="tokaya-blog-article">
+                    <a class="tokaya-blog-title" href="#"><h1>{{ b.title }}</h1></a>
+                    <div class="tokaya-blog-username ">
+                        {{ b.username }}
+                    </div>
+                    <div class="tokaya-blog-time">
+                        {{ b.created_time }}
+                    </div>
+                    {{ b.content|safe }}
+                    <a class="tokaya-blog-delete" href="{{ url_for('.delete', id=b.id) }}">删除</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="tokaya-blog-sidebar">
+            <div class="tokaya-blog-sidebar-about">
+                <div class="tokaya-sidebar-about">
+                    About Me
+                    <img src="/static/img/tokaya.jpg">
+                    <div class="tokaya-sidebar-content">
+                        这是自我介绍
+                    </div>
+                </div>
+            </div>
+            <div class="tokaya-blog-sidebar-about">
+                <div class="tokaya-sidebar-about">
+                    Social
+
+                </div>
+            </div>
+            <div class="tokaya-blog-sidebar-about">
+                <a class="tokaya-blog-new" href="{{ url_for('.add_article') }}">新文章</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

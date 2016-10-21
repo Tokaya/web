@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/node.css">
+{% endblock %}
+{% block title %}论坛{% endblock %}
+{% block content %}
+    <div class="tokaya-node-container">
+        <div class="tokaya-node-content">
+            <div class="tokaya-node-title-link">
+                {% for n in node_list %}
+                    <div class="tokaya-node-title">
+                        <a href="{{ url_for('.show', id=n.id) }}">{{ n.name }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="tokaya-node-topic-cell">
+                {% for t in node.topics %}
+                <div class="tokaya-node-topic-block">
+                    <a href="/profile">
+                        <img class="tokaya-node-topic-avatar" src="{{ t.avatar }}">
+                    </a>
+                    <div class="tokaya-node-topic-show">
+                        <a class="tokaya-node-topic-title" href="{{ url_for('topic.show', id=t.id) }}">
+                            {{ t.title }}
+                        </a>
+                        <div class="tokaya-node-topic-detail">
+                            <a class="tokaya-node-topic-tag" href="#">tag</a>
+                            <strong>•</strong>
+                            <a style="color:#778087;" href="/profile"><strong>{{ t.username }}</strong></a>
+                            <strong>•</strong>
+                            {{ t.created_time }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="tokaya-node-sidebar">
+            <div class="tokaya-node-sidebar-topbox">
+                <div class="tokaya-node-sidebar-profile">
+                    <img class="tokaya-comment-avatar" src="{{ user.avatar }}">
+                    <a href="/profile">{{ user.username }}</a>
+                </div>
+                <div class="tokaya-node-sidebar-post">
+                    <a style="font-size: 12px;" href="{{ url_for('.add_topic') }}">创建新主题</a>
+                </div>
+            </div>
+            <div class="tokaya-node-sidebar-ad">
+                广告位招租
+            </div>
+        </div>
+    </div>
+{% endblock %}

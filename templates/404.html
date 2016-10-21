@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .doing {
+        width: 50%;
+        margin: 98px auto 41px;
+    }
+    .tokaya-404 {
+        padding: 10px;
+        border-radius: 5px;
+        background: black;
+    }
+  </style>
+{% endblock %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    <div class="doing">
+        <img class="tokaya-404" src="/static/img/doing.jpg">
+    </div>
+
+{% endblock %}

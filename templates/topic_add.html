@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/topic_add.css">
+{% endblock %}
+{% block title %}主页{% endblock %}
+{% block content %}
+<div class="tokaya-blog">
+    <form action="{{ url_for('topic.add') }}" method="post">
+        <input type="text" name="title" placeholder="帖子名字">
+        <button>发表</button>
+        <a href="{{ url_for('.show', id=1) }}">取消编辑</a>
+        <div class="tokaya-blog-edit">
+            <textarea name="content" placeholder="帖子内容"></textarea>
+        </div>
+        <select class="select-node font-size-16" name="node_id">
+            {% for n in node_list%}
+                <option value ="{{ n.id }}">{{ n.name }}</option>
+            {% endfor %}
+        </select>
+    </form>
+</div>
+
+{% endblock %}

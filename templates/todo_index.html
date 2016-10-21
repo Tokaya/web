@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/todo_index.css">
+{% endblock %}
+{% block title %}主页{% endblock %}
+{% block content %}
+<div class="todo-add">
+    <form action="{{ url_for('.add') }}" method="post">
+        <textarea type="text" name="task" placeholder="输入 todo"></textarea>
+        <button>Add</button>
+    </form>
+</div>
+{% for todo in todo_list %}
+<div class="todo-cell">
+    <div class="todo-time">
+        {{ todo.created_time }}
+    </div>
+    <div class="todo-task">
+        {{ todo.task }}
+        <input class="todo-checkbox" type="checkbox">
+    </div>
+    <div class="todo-edit">
+        <a class="todo-edit-icon" href="{{ url_for('.edit', id=todo.id) }}">
+            <img src="/static/img/edit.gif" title="编辑">
+        </a>
+        <a class="todo-edit-icon" href="{{ url_for('.delete', id=todo.id) }}">
+            <img src="/static/img/delete.png" title="删除">
+        </a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

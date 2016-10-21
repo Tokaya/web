@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+        {% block title %}{% endblock %} - Tokayaの駅
+    </title>
+    {% block head %}
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script>
+            console.log('父模板的 log')
+        </script>
+    {% endblock %}
+    <link rel="stylesheet" href="/static/css/home_base.css">
+  </head>
+<body>
+  <div class="container">
+      <div class="tokaya-header">
+          <div class="tokaya-top-inner">
+              <a href="/" class="tokaya-title">Tokaya の </a>
+              <a href="/" class="tokaya-title tokaya-eki">駅</a>
+              <span class="link">
+                  <a class="tokaya-nav-item" href="/login">登陆</a>
+              </span>
+          </div>
+      </div>
+      <div class="body">
+      {% block content %}
+
+      {% endblock %}
+      </div>
+      <div class="tokaya-header footer">
+        {% block footer %}
+            <span class=""></span>Copyright 2016 by <a href="/">@Tokaya</a>.
+        {% endblock %}
+      </div>
+  </div>
+</body>
+</html>

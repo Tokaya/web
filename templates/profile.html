@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .profile {
+        margin: 50px auto;
+        width: 820px;
+        padding: 10px;
+        background-color: white;
+        border: 1px solid #e1e8ed;
+    }
+    img.big {
+        max-width: 66px;
+        max-height: 66px;
+    }
+    img.mid {
+        max-width: 48px;
+        max-height: 48px;
+    }
+    img.sml {
+        max-width: 30px;
+        max-height: 30px;
+    }
+  </style>
+{% endblock %}
+{% block title %}个人资料{% endblock %}
+{% block content %}
+    <div class="profile">
+        用户名： {{ user.username }}
+        id: {{ user.id }}
+        密码： {{ user.password }}
+        <div>
+          <form action="/user/update_avatar" method="post">
+            头像：
+            <input name="avatar" value="{{ user.avatar }}" style="width:400px;">
+            <button>修改头像</button>
+          </form>
+        </div>
+        <div>
+          头像预览：
+          <div >
+            大<img class="big" src="{{ user.avatar }}" class="avatar-l">
+            中<img class="mid" src="{{ user.avatar }}" class="avatar">
+            小<img class="sml" src="{{ user.avatar }}" class="avatar-s">
+          </div>
+        </div>
+    </div>
+
+{% endblock %}

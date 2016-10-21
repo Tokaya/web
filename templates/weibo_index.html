@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <script src="/static/js/weibo.js"></script>
+  <link rel="stylesheet" href="/static/css/weibo.css">
+{% endblock %}
+{% block title %}微博{% endblock %}
+{% block content %}
+    <div class="tokaya-weibo-container tokaya-weibo-edit">
+        <form action="/weibo/add" method="post">
+            <div class="tokaya-weibo-textarea">
+                <textarea name="content" placeholder="有什么新鲜事？"></textarea>
+            </div>
+            <div class="tokaya-weibo-post-box">
+                <div class="tokaya-weibo-tools">
+                    <img src="/static/img/camera.png" title="暂时无效">
+                    <img src="/static/img/music.png" title="暂时无效">
+                    <img src="/static/img/location.png" title="暂时无效">
+                </div>
+                <div class="tokaya-weibo-post">
+                    <button title="发布新微博">
+                        <img src="/static/img/post_weibo.png">
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="tokaya-weibo-container">
+        {% for w in weibos %}
+            <div class="tokaya-weibo-cell">
+                <span class="tokaya-avatar-icon">
+                    <img class="tokaya-avatar" src="{{ w.avatar }}">
+                </span>
+                <span class="tokaya-weibo-detail">
+                    <span class="tokaya-weibo-username">
+                        {{ w.username }}
+                    </span>
+                    <span class="tokaya-weibo-time">
+                        {{ w.created_time }}
+                    </span>
+                    <div class="tokaya-weibo-content">
+                        {{ w.content }}
+                    </div>
+                </span>
+                <div class="tokaya-weibo-icon">
+                    <button class="tokaya-comment-icon" title="评论">
+                        <img src="/static/img/comment.png">
+                    </button>
+                    <a class="tokaya-weibo-icon" title="删除" href="{{ url_for('.delete', id=w.id) }}">
+                        <img src="/static/img/delete.png">
+                    </a>
+                </div>
+            </div>
+            <div class="tokaya-comment-cell">
+                <img class="tokaya-comment-avatar" src="{{ user.avatar }}">
+                <form action="/weibo/comment" method="post">
+                    <input type="hidden" name="weibo_id" value="{{ w.id }}">
+                    <input class="tokaya-comment-input" name="content">
+                    <button class="tokaya-comment-button">评论</button>
+                </form>
+                <div class="tokaya-emoji-icon tokaya-emoji-cell">
+                    <img src="/static/img/emoji.png" title="暂时无效">
+                    <img style="padding-left: 10px"src="/static/img/picture.png" title="暂时无效">
+                </div>
+                <div class="tokaya-emoji-icon">
+                    <input type="checkbox"><span>同时转发到我的微博</span>
+                    <br>
+                    <input type="checkbox"><span>同时评论给原文作者 <strong>{{ w.username }}</strong></span>
+                </div>
+                {% for c in w.comment %}
+                <div class="tokaya-comment-content-cell">
+                    <img class="tokaya-comment-content-avatar" src="{{ c.avatar }}">
+                    <div class="tokaya-comment-content-cell-margin">
+                        <div class="tokaya-weibo-username tokaya-comment-content">
+                            {{ c.username }}
+                        </div>
+                        <div class="tokaya-comment-content">
+                            : {{ c.content }}
+                        </div>
+                        <div class="tokaya-weibo-time">
+                            {{ c.created_time }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

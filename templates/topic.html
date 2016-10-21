@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/topic.css">
+{% endblock %}
+{% block title %}论坛{% endblock %}
+{% block content %}
+    <div class="tokaya-node-container">
+        <div class="tokaya-node-content">
+            <div class="tokaya-node-topic">
+                <div class="tokaya-node-topic-content">
+                    <a class="tokaya-node-content-link" href="{{url_for('node.node_show')}}">论坛</a>
+                    <span>&nbsp;›&nbsp;</span>
+                    <a class="tokaya-node-content-link" href="{{url_for('node.show', id=topic.node.id)}}">{{ topic.node.name }}</a>
+                    <img src="{{ topic.avatar }}">
+                    <h1 class="tokaya-node-topic-title">{{ topic.title }}</h1>
+                    <a class="tokaya-node-content-link" href="/profile">{{ topic.username }}</a>
+                    <strong>•</strong>
+                    <span>{{ topic.created_time }}</span>
+                </div>
+                <div class="tokaya-node-topic-article">
+                        {{ topic.content|safe}}
+                </div>
+                <div class="tokaya-node-topic-bottom">
+                    <a href="#">加入收藏</a>
+                    <a href="#">Tweet</a>
+                    <a href="#">Weibo</a>
+                </div>
+            </div>
+            <div class="tokaya-node-topic tokaya-node-topic-comment">
+                <div class="tokaya-node-topic-comment-top">
+                    添加一条新回复
+                </div>
+                <div class="tokaya-node-topic-comment-top">
+                    <form action="/topic/comment" method="post">
+                        <input type="hidden" name="topic_id" value="{{ topic.id }}">
+                        <textarea class="tokaya-comment-input" name="content"></textarea>
+                        <button class="tokaya-comment-button">回复</button>
+                    </form>
+                </div>
+            </div>
+            <div class="tokaya-node-topic">
+                {% for c in topic.comment %}
+                <div class="tokaya-node-topic-comment-top tokaya-node-topic-comment-cell">
+                    <img src="{{ c.avatar }}">
+                    <div class="tokaya-comment-detail">
+                        <div class="tokaya-comment-user">
+                            <a href="/profile">{{ c.username }}</a>
+                            <span>{{ c.created_time }}</span>
+                        </div>
+                        <p>
+                            {{ c.content }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="tokaya-node-sidebar">
+            <div class="tokaya-node-sidebar-topbox">
+                <div class="tokaya-node-sidebar-profile">
+                    <img class="tokaya-comment-avatar" src="{{ user.avatar }}">
+                    <a href="/profile">{{ user.username }}</a>
+                </div>
+                <div class="tokaya-node-sidebar-post">
+                    <a style="font-size: 12px;" href="{{ url_for('node.add_topic') }}">创建新主题</a>
+                </div>
+            </div>
+            <div class="tokaya-node-sidebar-ad">
+                广告位招租
+            </div>
+        </div>
+    </div>
+{% endblock %}

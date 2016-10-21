@@ -1,0 +1,79 @@
+.container {
+    position:relative;
+    width:100%;
+    min-height:100%;
+}
+.body {
+    padding-bottom: 60px;
+}
+.footer {
+    color: ghostwhite;
+    width: 100%;
+    position: absolute;;
+    bottom: 0px;
+    left: 0px;
+}
+body {
+    font-family: Inziu IosevkaCC Slab SC;
+    margin: 0px;
+    background-image:url(/static/img/eki.JPG);
+}
+.tokaya-header {
+    height: 60px;
+    background-color: black;
+}
+.tokaya-top-inner {
+    max-width: 1020px;
+    min-width: 600px;
+    margin: 0 auto;
+    font-weight: bold;
+}
+.tokaya-title {
+    padding: 10px 0;
+    color: snow;
+    font-family: Inziu Roboto TC;
+    font-size: 32px;
+}
+.tokaya-eki {
+    padding: 10px 0;
+    color: lightskyblue;
+}
+    .tokaya-eki:hover {
+        color: white;
+    }
+.link {
+    float: right;
+}
+a {
+    color: ghostwhite;
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.tokaya-nav-item:hover {
+    background-color: orangered;
+}
+.tokaya-dropdown-content {
+    z-index: 1;
+    margin-left: 244px;
+    display: none;
+    position: absolute;
+    background-color: black;
+}
+.tokaya-dropdown {
+    position: relative;
+}
+.tokaya-dropdown:hover .tokaya-dropdown-content {
+    display: block;
+}
+.tokaya-dropdown-content a {
+    display: block;
+    padding: 5px 15px;
+    color: white;
+    text-decoration: none;
+}
+.tokaya-dropdown-content a:hover {
+    background: white;
+    color: black;
+}

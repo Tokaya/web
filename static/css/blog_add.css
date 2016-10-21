@@ -1,0 +1,50 @@
+.tokaya-blog {
+    width: 1000px;
+    margin: 50px auto 0;
+    background: #F4F4F4;
+    padding: 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 3px;
+}
+.tokaya-blog-edit textarea {
+    margin-top: 10px;
+    padding: 10px;
+    width: 97%;
+    height: 680px;
+    border-radius: 3px;
+    font-family: Inziu IosevkaCC Slab SC;
+}
+.tokaya-blog input {
+    padding: 10px;
+    width: 83%;
+    border-radius: 3px;
+    border: 1px solid rgb(169, 169, 169);
+    outline: none;
+    font-family: Inziu IosevkaCC Slab SC;
+}
+.tokaya-blog button {
+    font-family: Inziu IosevkaCC Slab SC;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: black;
+}
+.tokaya-blog button:hover {
+    color: black;
+    background-color: white;
+}
+.tokaya-blog a:hover {
+    color: red;
+    background-color: white;
+}
+.tokaya-blog a {
+    padding: 0;
+    color:white;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: red;
+    border-radius: 3px;
+    padding: 1px 6px;
+}

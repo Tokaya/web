@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+  {% block head %}
+    {{ super() }}
+    <style>
+      .header {
+        width: 1024px;
+        height: 412px;
+        margin: 0 auto;
+      }
+      .top-img {
+        position: absolute;
+      }
+      .top {
+        width: 90%;
+        display: flex;
+        position: relative;
+        margin: 0 auto;
+      }
+      .searcher {
+        width: 95%;
+        margin: 20px auto;
+        display: flex;
+        background-color: #222222;
+        border-radius: 4px;
+      }
+      .search {
+        width: 89%;
+        background-color: #222222;
+        color: white;
+        border: 0px solid;
+        font-weight: bold;
+        font-family: Comic Sans MS;
+      }
+      .login {
+        background-color: black;
+        padding: 10px;
+      }
+      .register {
+        color: gray;
+        padding: 10px;
+      }
+      .top-font {
+        font-family: 造字工房悦黑（非商用）常规体;
+        color: white;
+        font-size: 12px;
+      }
+      .top-inner {
+        position: relative;
+        margin-top: 230px;
+        text-align: center;
+      }
+      .develop {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      .join {
+        width: 6%;
+        margin: 10px auto 28px auto;;
+        padding: 5px;
+        background-color: #428AC9;
+        border-radius: 4px;
+      }
+      .tools {
+        margin: 0 auto;
+        display: flex;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #EEE;
+      }
+      .tools-item {
+        width: 30%;
+        margin: 30px 0px 0 25px;
+        text-align: center;
+
+      }
+      .tools-img {
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        position: relative;
+      }
+      .tool-font {
+        font-family: 造字工房悦黑（非商用）常规体;
+        font-size: 12px;
+        color: gray;
+      }
+      .too-item-font {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .sass-img {
+        width: 153px;
+        height: 153px;
+        margin-bottom: 16px;
+      }
+      .ruby-img {
+        width: 153px;
+        height: 153px;
+        margin-bottom: 16px;
+        display: flex;
+        margin-left: 75px;
+      }
+      .css-img {
+        width: 153px;
+        height: 155x;
+      }
+      .body-font {
+        margin-top: 115px;
+        font-family: 造字工房悦黑（非商用）常规体;
+        font-size: 40px;
+      }
+      .body-item {
+        margin: 55px 0px 0 80px;
+        display:flex;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #EEE;
+      }
+      .mac-img {
+        width: 37%;
+        height: 30%;
+        margin-left: 35px;
+        margin-right: 35px;
+      }
+      .bot {
+        padding-top: 40px;
+        border-bottom: 1px solid #EEE;
+      }
+      .bot-font {
+        color: gray;
+      }
+      .left {
+        float: left;
+      }
+      .right {
+        float: right;
+      }
+      .practice-body {
+        margin: 15px auto;
+        background-color: white;
+        padding: 10px 10px 1611px;
+      }
+    </style>
+  {% endblock %}
+  {% block title %}HACKSCHOO{% endblock %}
+  {% block content %}
+  <div class="practice-body">
+      <div class="header">
+        <img class="top-img" src="{{ url_for('static', filename='img/header.png') }}">
+          <div class="top">
+            <div class="searcher">
+              <input type="text" class="search" name="search" value="HACKSCHOOL">
+              <div class="login top-font">
+                登陆
+              </div>
+              <div class="register top-font">
+                注册
+              </div>
+            </div>
+          </div>
+          <div class="top-inner">
+            <div class="develop top-font">
+              全栈开发
+            </div>
+            <div class="top-font">
+              8周密集训练前端丶后端技能 ·
+            </div>
+            <div class="top-font join">
+              加入我们
+            </div>
+          </div>
+        <div class="tools">
+          <div class="tools-item">
+            <img class="tools-img ruby-img" src="{{ url_for('static', filename='img/ruby.png') }}">
+            <div class="tool-font too-item-font">
+              Ruby on Rails
+            </div>
+            <div class="tool-font">
+              最快速高效地开发产品 丶
+            </div>
+          </div>
+          <div class="tools-item">
+            <img class="tools-img css-img" src="{{ url_for('static', filename='img/css.png') }}">
+            <div class="tool-font too-item-font">
+              CSS
+            </div>
+            <div class="tool-font">
+              精美样式布局·打磨拥有成就感的产品 丶
+            </div>
+          </div>
+          <div class="tools-item">
+            <img class="tools-img sass-img" src="{{ url_for('static', filename='img/sass.png') }}">
+            <div class="tool-font too-item-font">
+              Sass
+            </div>
+            <div class="tool-font">
+              从0到1做出属于自己的Sass产品 丶
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <div class="body-item">
+            <p class="body-font">
+              Rails 环境配置·迅速开始·
+            </p>
+            <img class="mac-img" src="{{ url_for('static', filename='img/mac.png') }}">
+          </div>
+          <div class="body-item">
+            <img class="mac-img" src="{{ url_for('static', filename='img/rubyw.png') }}">
+            <p class="body-font">
+              Rails 初级教程·上手开发·
+            </p>
+          </div>
+          <div class="body-item">
+            <p class="body-font">
+              Rails 中级教程·快速进阶·
+            </p>
+            <img class="mac-img" src="{{ url_for('static', filename='img/mact.jpg') }}">
+          </div>
+        </div>
+        <div class="bot">
+          <span class="top-font bot-font left">
+            @2016 HACKSCHOOL
+          </span>
+          <span class="top-font bot-font right">
+            Back to top
+          </span>
+        </div>
+      </div>
+  </div>
+  {% endblock %}

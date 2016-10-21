@@ -1,0 +1,82 @@
+form {
+    display: inline-block;
+}
+.tokaya-blog {
+    width: 1000px;
+    margin: 50px auto;
+    background: #F4F4F4;
+    padding: 70px 20px 0 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 3px;
+    display: flex;
+}
+.tokaya-blog-content {
+    width: 800px;
+    min-height: 800px;
+}
+a.tokaya-blog-title {
+    color: black;
+    padding: 0;
+    font-style: italic;
+}
+a.tokaya-blog-title:hover {
+    color: red;
+}
+.tokaya-blog-article {
+    padding-left: 55px;
+    padding-right: 43px;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    margin-bottom: 30px;
+    border: 1px solid #e1e8ed;
+    background-color: white;
+    border-radius: 3px;
+    flex-grow: 1.5;
+    /*min-width: 800px;*/
+}
+.tokaya-blog-time {
+    font-size: 13px;
+    color: #8899a6;
+}
+.tokaya-blog-username {
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(137, 135, 250);
+}
+a.tokaya-blog-delete {
+    color: #FA8787;
+    padding-left: 510px;
+}
+a.tokaya-blog-delete:hover {
+    color: red;
+}
+.tokaya-blog-sidebar {
+    width: 337px;
+    flex-grow: 1;
+    height: 800px;
+}
+.tokaya-blog-sidebar-about {
+    border: 1px solid #e1e8ed;
+    background-color: white;
+    border-radius: 3px;
+    margin-left: 35px;
+    margin-bottom: 35px;
+}
+.tokaya-sidebar-about {
+    font-size: 24px;
+    padding: 30px;
+}
+.tokaya-sidebar-about img {
+    max-width: 240px;
+    padding-top: 10px;
+}
+.tokaya-sidebar-content {
+    font-size: 16px;
+}
+a.tokaya-blog-new {
+    color: black;
+    padding: 30px;
+}
+a.tokaya-blog-new:hover {
+    color: red;
+}

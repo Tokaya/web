@@ -1,0 +1,48 @@
+{% extends "home_base.html" %}
+{% block head %}
+  {{ super() }}
+      <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="/static/css/user_login.css">
+      <script src="/static/js/user_login.js"></script>
+{% endblock %}
+{% block title %}注册与登陆{% endblock %}
+{% block content %}
+<div class="tokaya-container">
+    <div class="tokaya-main">
+        <div class="tokaya-form">
+            <div class="tokaya-tab">
+                <a class="signup" id="id-a-signup" href="#">注册</a>
+                <a class="signup" id="id-a-login" href="#">登录</a>
+                <div class="tokaya-block"></div>
+            </div>
+            <div id="id-div-signup">
+                <form action="/user/register" method="post">
+                    <div class="tokaya-form-textinput">
+                        <div class="tokaya-input-wrapper">
+                            <input class="tokaya-icon-login-input" id="id-input-username" name="username" type="text" placeholder="你的名字或昵称（不少于 3 位）" required/>
+                        </div>
+                        <div class="tokaya-input-wrapper">
+                            <input class="tokaya-icon-password-input" id="id-input-password" name="password" type="text" placeholder="密码（不少于 3 位）" required/>
+                        </div>
+                    </div>
+                    <button id="id-button-register" class="tokaya-button-big">注册</button>
+                </form>
+            </div>
+            <div id="id-div-login">
+                <form action="/user/login" method="post">
+                    <div class="tokaya-form-textinput">
+                        <div class="tokaya-input-wrapper">
+                            <input class="tokaya-icon-login-input" id="id-input-login-username" name="username" type="text" placeholder="你的名字或昵称" required/>
+                        </div>
+                        <div class="tokaya-input-wrapper">
+                            <input class="tokaya-icon-password-input" id="id-input-login-password" name="password" type="text" placeholder="密码" required/>
+                        </div>
+                    </div>
+                    <button id="id-button-login" class="tokaya-button-big" type="submit">登陆</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

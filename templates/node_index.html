@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .node a {
+        color: black;
+    }
+  </style>
+{% endblock %}
+{% block title %}论坛{% endblock %}
+{% block content %}
+    <div>
+        <form action="{{ url_for('.add') }}" method="post">
+            <input type="text" name="name" placeholder="输入 name">
+            <button>Add</button>
+        </form>
+    </div>
+
+{% for n in node_list %}
+    <div class="node">
+        <a href="{{ url_for('.edit', id=n.id) }}">修改</a>
+        <a href="{{ url_for('.delete', id=n.id) }}">删除</a>
+        <a href="{{ url_for('.show', id=n.id) }}">{{ n.name }}</a>
+    </div>
+{% endfor %}
+{% endblock %}

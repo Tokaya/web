@@ -1,0 +1,155 @@
+.tokaya-weibo-container {
+    background-color: rgb(42, 42, 40);
+    width: 590px;
+    margin: 10px auto 0;
+    border: 1px solid lightskyblue;
+    border-radius: 0 0 5px 5px;
+}
+.tokaya-weibo-edit {
+    text-align: center;
+    background-color: rgb(68, 68, 68);
+    border-radius: 5px 5px 0 0;
+}
+.tokaya-weibo-textarea {
+    padding: 10px;
+}
+.tokaya-weibo-textarea textarea {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid lightskyblue;
+    width: 535px;
+    height: 80px;
+    border-radius: 3px;
+    color: white;
+    padding: 10px;
+}
+.tokaya-weibo-post-box {
+    display: flex;
+}
+.tokaya-weibo-tools img {
+    margin-left: 18px;
+    cursor: pointer;
+}
+.tokaya-weibo-post button {
+    cursor: pointer;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+.tokaya-weibo-post {
+    text-align: right;
+    padding: 0 10px 10px 386px;
+}
+.tokaya-weibo-cell {
+    padding: 15px 15px 5px 15px;
+    color: white;
+    border-bottom: 1px solid lightskyblue;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+}
+.tokaya-weibo-detail {
+    padding-left: 10px;
+}
+.tokaya-weibo-username {
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(137, 135, 250);
+}
+.tokaya-weibo-content {
+    padding: 10px 20px 0 58px;
+    font-size: 14px;
+}
+.tokaya-weibo-time {
+    font-size: 13px;
+    color: #8899a6;
+}
+.tokaya-avatar-icon{
+    width: 48px;
+    height: 48px;
+}
+.tokaya-avatar {
+    float: left;
+    max-width: 48px;
+    max-height: 48px;
+}
+.tokaya-weibo-icon {
+    float: right;
+    padding-right: 10px;
+}
+button.tokaya-comment-icon {
+    cursor: pointer;
+    padding-right: 30px;
+    background: none;
+    border: none;
+    outline:none;
+}
+a.tokaya-weibo-icon {
+    font-size: 12px;
+    padding: 0px;
+}
+.tokaya-comment-cell {
+    display: none;
+    background-color: rgb(68, 68, 68);
+    padding: 10px 10px 20px 20px;
+    font-size: 12px;
+    color: white;
+}
+.tokaya-comment-input {
+    background-color: rgba(0, 0, 0, 0);
+    width: 89%;
+    border: 1px solid lightskyblue;
+    border-radius: 3px;
+    height: 23px;
+    color: white;
+    padding-left: 0px;
+    margin-left: 25px;
+}
+button.tokaya-comment-button {
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    width: 62px;
+    height: 26px;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    background-color: lightskyblue;
+    margin: 10px 5px;
+}
+.tokaya-emoji-cell {
+    margin-left: 25px;
+}
+.tokaya-emoji-icon {
+    padding: 5px 0;
+    display: inline-table;
+}
+.tokaya-emoji-icon button {
+    padding-left: 5px;
+}
+.tokaya-comment-content {
+    display: inline;
+}
+.tokaya-comment-content-cell {
+    padding: 5px 20px 5px 0px;
+    margin: 0 5px 0 55px;
+    overflow: hidden;
+}
+.tokaya-comment-content-cell-margin {
+    margin-left: 10px;
+    display: inline-block;
+}
+.tokaya-comment-content-cell + .tokaya-comment-content-cell {
+    border-style: solid;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-color: lightskyblue;
+}
+.tokaya-comment-avatar {
+    float: left;
+    max-width: 30px;
+    max-height: 30px;
+}
+.tokaya-comment-content-avatar {
+    text-align: left;
+    max-width: 30px;
+    max-height: 30px;
+}

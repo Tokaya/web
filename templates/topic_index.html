@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    p {
+        background: red;
+    }
+  </style>
+{% endblock %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    <div>
+        <form action="{{ url_for('.add') }}" method="post">
+            <div class="">
+                <input type="text" name="title" placeholder="输入 title">
+            </div>
+            <div class="">
+                <textarea name="content" placeholder="输入 content"></textarea>
+            </div>
+            <div class="">
+                <button>Post Topic</button>
+            </div>
+        </form>
+    </div>
+
+    {% for m in topic_list %}
+    <div>
+        <a href="{{ url_for('.edit', id=m.id) }}">修改</a>
+        <a href="{{ url_for('.delete', id=m.id) }}">删除</a>
+        <h1> {{ m.title }} </h1>
+        <div class="">
+            {{ m.content }}
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
