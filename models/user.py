@@ -10,9 +10,9 @@ from . import timestamp
 class User(db.Model, ModelMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String())
-    password = db.Column(db.String())
-    avatar = db.Column(db.String())
+    username = db.Column(db.String(1000))
+    password = db.Column(db.String(1000))
+    avatar = db.Column(db.String(1000))
     created_time = db.Column(db.Integer, default=0)
 
 

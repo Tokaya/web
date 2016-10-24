@@ -6,7 +6,7 @@ from . import timestamp
 class Todo(db.Model, ModelMixin):
     __tablename__ = 'todos'
     id = db.Column(db.Integer, primary_key=True)
-    task = db.Column(db.String())
+    task = db.Column(db.String(1000))
     created_time = db.Column(db.Integer)
     updated_time = db.Column(db.Integer)
     # 这是一个外键

@@ -6,12 +6,12 @@ from .user import User
 class TopicComment(db.Model, ModelMixin):
     __tablename__ = 'topiccomments'
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String())
+    content = db.Column(db.String(1000))
     created_time = db.Column(db.Integer, default=timestamp())
     updated_time = db.Column(db.Integer, default=timestamp())
     user_id = db.Column(db.Integer)
     topic_id = db.Column(db.Integer, db.ForeignKey('topics.id'))
-    username = db.Column(db.String())
+    username = db.Column(db.String(1000))
 
     def __init__(self, form):
         print('comment init', form)
@@ -29,13 +29,13 @@ class TopicComment(db.Model, ModelMixin):
 class Topic(db.Model, ModelMixin):
     __tablename__ = 'topics'
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String())
-    content = db.Column(db.String())
+    title = db.Column(db.String(1000))
+    content = db.Column(db.String(1000))
     user_id = db.Column(db.Integer)
     created_time = db.Column(db.Integer, default=timestamp())
     updated_time = db.Column(db.Integer, default=timestamp())
     node_id = db.Column(db.Integer, db.ForeignKey('nodes.id'))
-    username = db.Column(db.String())
+    username = db.Column(db.String(1000))
 
     def __init__(self, form):
         print('topic init', form)

@@ -8,10 +8,10 @@ class Weibo(db.Model, ModelMixin):
     __tablename__ = 'weibos'
     # 下面是字段定义
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String())
+    content = db.Column(db.String(1000))
     created_time = db.Column(db.Integer, default=0)
     # 定义关系
-    username = db.Column(db.String())
+    username = db.Column(db.String(1000))
     user_id = db.Column(db.Integer)
 
     def __init__(self, form):
@@ -38,9 +38,9 @@ class Comment(db.Model, ModelMixin):
     __tablename__ = 'comments'
     # 下面是字段定义
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String())
+    content = db.Column(db.String(1000))
     created_time = db.Column(db.Integer, default=0)
-    username = db.Column(db.String())
+    username = db.Column(db.String(1000))
     # 定义关系
     user_id = db.Column(db.Integer)
     weibo_id = db.Column(db.Integer)

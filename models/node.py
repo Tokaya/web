@@ -7,11 +7,11 @@ from .user import User
 class Node(db.Model, ModelMixin):
     __tablename__ = 'nodes'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String())
-    description = db.Column(db.String())
+    name = db.Column(db.String(1000))
+    description = db.Column(db.String(1000))
     # has relationship with topic
     topics = db.relationship('Topic', backref="node")
-    username = db.Column(db.String())
+    username = db.Column(db.String(1000))
 
     def __init__(self, form):
         self.name = form.get('name', '')
